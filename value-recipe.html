@@ -1,0 +1,17 @@
+<!-- value-recipe.html -->
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<body>
+		<div ng-controller="TwitterController">
+			<span><b>Token: </b> {{token}}</span>
+		</div>
+	</body>
+	<script src="angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+		app.value('$twitterAPIToken', 'YTEyMzQ1NjU0MzIxeA=='); //declaração do token como value
+		app.controller('TwitterController', ['$scope', '$twitterAPIToken', function($scope, $twitterAPIToken){
+			$scope.token = $twitterAPIToken;
+		}]);
+	</script>
+</html>
